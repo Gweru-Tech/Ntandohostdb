@@ -1,0 +1,38 @@
+{
+  "name": "ntando-hosting-platform",
+  "version": "1.0.0",
+  "description": "Full hosting platform for custom domains on render.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required'",
+    "test": "jest"
+  },
+  "keywords": ["hosting", "domains", "render", "nodejs"],
+  "author": "Ntando Hosting Platform",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1",
+    "sharp": "^0.33.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

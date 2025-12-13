@@ -1,0 +1,61 @@
+services:
+  # Web service
+  - type: web
+    name: ntando-hosting-platform
+    env: node
+    plan: starter
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    healthCheckPath: "/api/health"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: ntando-hosting-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RENDER_HOSTNAME
+        value: "{{serviceUrl}}"
+      - key: RENDER_IP
+        value: "127.0.0.1"  # This will be automatically replaced by Render's actual IP
+
+  # Database service
+  - type: pserv
+    name: ntando-hosting-db
+    env: docker
+    plan: starter
+    dockerfilePath: ./docker/Dockerfile.mongodb
+    envVars:
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: admin
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        generateValue: true
+
+# Custom domains configuration
+domains:
+  - name: ntando.app
+    type: custom
+  - name: ntando.cloud
+    type: custom
+  - name: ntando.zw
+    type: custom
+  - name: ntl.cloud
+    type: custom
+  - name: ntl.ai
+    type: custom
+  - name: ntl.zw
+    type: custom
+
+# Auto-deploy configuration
+autoDeploy: true
+buildFilter:
+  paths:
+    - src/**
+    - public/**
+    - package.json
+    - server.js
+    - render.yaml
