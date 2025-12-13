@@ -1,0 +1,11 @@
+FROM mongo:6.0
+
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=password123
+ENV MONGO_INITDB_DATABASE=ntando-hosting
+
+COPY docker/mongo-init.js /docker-entrypoint-initdb.d/
+
+EXPOSE 27017
+
+CMD ["mongod", "--auth"]
