@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ntando Hosting Platform - Deploy Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🚀</span>
+                <span class="brand-text">Ntando Hosting</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#dashboard" class="nav-link" id="dashboardLink" style="display: none;">Dashboard</a>
+                <button class="btn btn-primary" id="authBtn">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Deploy Your Website in Seconds</h1>
+                    <p class="hero-subtitle">
+                        Host your HTML, CSS, and JavaScript websites with custom domains like 
+                        <strong>mysite.ntando.app</strong>, <strong>mysite.ntando.cloud</strong>, and more.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large" id="getStartedBtn">Get Started Free</button>
+                        <button class="btn btn-secondary btn-large" id="demoBtn">View Demo</button>
+                    </div>
+                    <div class="hero-domains">
+                        <span>Your site at:</span>
+                        <div class="domain-examples">
+                            <code>yourname.ntando.app</code>
+                            <code>yourname.ntando.cloud</code>
+                            <code>yourname.ntl.ai</code>
+                            <code>yourname.ntando.zw</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Custom Domains</h3>
+                        <p>Choose from premium domains like .ntando.app, .ntando.cloud, .ntl.ai, and more</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Deploy</h3>
+                        <p>Upload your files and see your site live in seconds with zero configuration</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>SSL Security</h3>
+                        <p>Free SSL certificates for all sites ensuring secure HTTPS connections</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics</h3>
+                        <p>Track your site performance with built-in analytics and visitor insights</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>File Manager</h3>
+                        <p>Easy-to-use file manager for uploading and managing your website files</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Global CDN</h3>
+                        <p>Lightning-fast content delivery network for optimal performance worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title">Simple Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Free</h3>
+                        <div class="price">$0<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>✓ 1 Site</li>
+                            <li>✓ 100MB Storage</li>
+                            <li>✓ Custom Subdomain</li>
+                            <li>✓ Basic Analytics</li>
+                            <li>✓ Community Support</li>
+                        </ul>
+                        <button class="btn btn-outline" data-plan="free">Start Free</button>
+                    </div>
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price">$10<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>✓ 10 Sites</li>
+                            <li>✓ 10GB Storage</li>
+                            <li>✓ Custom Domains</li>
+                            <li>✓ Advanced Analytics</li>
+                            <li>✓ Priority Support</li>
+                            <li>✓ Password Protection</li>
+                        </ul>
+                        <button class="btn btn-primary" data-plan="pro">Start Pro</button>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">$29<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>✓ Unlimited Sites</li>
+                            <li>✓ 100GB Storage</li>
+                            <li>✓ Custom Domains</li>
+                            <li>✓ Advanced Analytics</li>
+                            <li>✓ 24/7 Support</li>
+                            <li>✓ API Access</li>
+                            <li>✓ Team Collaboration</li>
+                        </ul>
+                        <button class="btn btn-outline" data-plan="enterprise">Start Enterprise</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authTitle">Sign In</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div id="nameField" style="display: none;">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="authSubmit">Sign In</button>
+                </form>
+                <div class="auth-switch">
+                    <span id="authSwitchText">Don't have an account?</span>
+                    <a href="#" id="authSwitchLink">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div class="modal" id="dashboardModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Dashboard</h2>
+                <button class="modal-close" id="closeDashboard">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="dashboard-nav">
+                    <button class="tab-btn active" data-tab="sites">My Sites</button>
+                    <button class="tab-btn" data-tab="new-site">New Site</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+                
+                <div class="tab-content" id="sitesTab">
+                    <div class="sites-header">
+                        <h3>Your Sites</h3>
+                        <button class="btn btn-primary" id="quickAddSite">+ New Site</button>
+                    </div>
+                    <div id="sitesList" class="sites-list">
+                        <!-- Sites will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="tab-content" id="newSiteTab" style="display: none;">
+                    <h3>Create New Site</h3>
+                    <form id="createSiteForm">
+                        <div class="form-group">
+                            <label for="siteName">Site Name</label>
+                            <input type="text" id="siteName" name="siteName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subdomain">Subdomain</label>
+                            <div class="subdomain-input">
+                                <input type="text" id="subdomain" name="subdomain" required>
+                                <select id="domainSelect">
+                                    <option value="ntando.app">.ntando.app</option>
+                                    <option value="ntando.cloud">.ntando.cloud</option>
+                                    <option value="ntando.zw">.ntando.zw</option>
+                                    <option value="ntl.cloud">.ntl.cloud</option>
+                                    <option value="ntl.ai">.ntl.ai</option>
+                                    <option value="ntl.zw">.ntl.zw</option>
+                                </select>
+                            </div>
+                            <div id="subdomainStatus" class="subdomain-status"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Site</button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="settingsTab" style="display: none;">
+                    <h3>Settings</h3>
+                    <div class="settings-section">
+                        <h4>Account</h4>
+                        <p>Username: <span id="userUsername"></span></p>
+                        <p>Email: <span id="userEmail"></span></p>
+                        <p>Plan: <span id="userPlan"></span></p>
+                    </div>
+                    <div class="settings-section">
+                        <h4>API Keys</h4>
+                        <button class="btn btn-secondary" id="generateApiKey">Generate API Key</button>
+                        <div id="apiKeysList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
