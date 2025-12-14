@@ -31,10 +31,22 @@ router.post('/', auth, [
 
     const { name, subdomain } = req.body;
 
+    // Get user to check limits
+    const user = await User.findById(req.userId);
+    const limits = user.getLimits();
+
     // Check if subdomain is already taken
     const existingSite = await Site.findOne({ subdomain: subdomain.toLowerCase() });
     if (existingSite) {
       return res.status(400).json({ error: 'Subdomain already taken' });
+    }
+
+    // Check user limits (skip for admin)
+    if (!user.isAdmin()) {
+      const userSites = await Site.countDocuments({ userId: req.userId });
+      if (userSites >= limits.maxSites) {
+        return res.status(400).json({ error: `Site limit reached. Maximum ${limits.maxSites} sites allowed.` });
+      }
     }
 
     // Create new site
