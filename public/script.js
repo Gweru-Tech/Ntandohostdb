@@ -150,15 +150,24 @@ class NtandoHosting {
     updateUI() {
         const authBtn = document.getElementById('authBtn');
         const dashboardLink = document.getElementById('dashboardLink');
+        const adminLink = document.getElementById('adminLink');
 
         if (this.user) {
             authBtn.textContent = `Welcome, ${this.user.username}`;
             authBtn.onclick = () => this.showDashboard();
             dashboardLink.style.display = 'block';
+            
+            // Show admin link if user is admin
+            if (this.user.role === 'admin') {
+                adminLink.style.display = 'block';
+            } else {
+                adminLink.style.display = 'none';
+            }
         } else {
             authBtn.textContent = 'Sign In';
             authBtn.onclick = () => this.showAuthModal('login');
             dashboardLink.style.display = 'none';
+            adminLink.style.display = 'none';
         }
     }
 
