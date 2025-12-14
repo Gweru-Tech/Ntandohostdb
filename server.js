@@ -96,6 +96,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/sites', require('./routes/sites'));
 app.use('/api/domains', require('./routes/domains'));
 app.use('/api/files', require('./routes/files'));
+app.use('/api/admin', require('./routes/admin-public'));
+app.use('/api/admin', require('./routes/admin'));
 
 // Main application routes
 app.use(express.static(path.join(__dirname, 'public')));

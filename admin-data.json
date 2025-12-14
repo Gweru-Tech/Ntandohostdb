@@ -1,0 +1,17 @@
+{
+  "admin": {
+    "username": "Ntando",
+    "email": "admin@ntando.app",
+    "password": "Ntando",
+    "role": "admin",
+    "plan": "admin",
+    "permissions": {
+      "canManageUsers": true,
+      "canViewAllSites": true,
+      "canDeleteUsers": true,
+      "canModifyPlans": true,
+      "unlimitedSites": true,
+      "unlimitedStorage": true
+    }
+  }
+}
